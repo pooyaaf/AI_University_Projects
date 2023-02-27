@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>CA0</title>
+<title>AI_CA0_810198577</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13090,7 +13090,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install pandas
@@ -13118,8 +13118,8 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Requirement already satisfied: pandas in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (1.3.3)
 Requirement already satisfied: numpy&gt;=1.17.3 in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (from pandas) (1.21.2)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in c:\users\user\appdata\roaming\python\python39\site-packages (from pandas) (2.8.2)
 Requirement already satisfied: pytz&gt;=2017.3 in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (from pandas) (2021.1)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in c:\users\user\appdata\roaming\python\python39\site-packages (from pandas) (2.8.2)
 Requirement already satisfied: six&gt;=1.5 in c:\users\user\appdata\roaming\python\python39\site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.16.0)
 </pre>
 </div>
@@ -13167,12 +13167,12 @@ You should consider upgrading via the &#39;C:\Users\user\AppData\Local\Programs\
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Requirement already satisfied: matplotlib in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (3.4.3)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (from matplotlib) (2.4.7)
 Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (from matplotlib) (8.4.0)
 Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (from matplotlib) (1.3.2)
-Requirement already satisfied: cycler&gt;=0.10 in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (from matplotlib) (0.11.0)
 Requirement already satisfied: numpy&gt;=1.16 in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (from matplotlib) (1.21.2)
 Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\user\appdata\roaming\python\python39\site-packages (from matplotlib) (2.8.2)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\user\appdata\local\programs\python\python39\lib\site-packages (from matplotlib) (2.4.7)
 Requirement already satisfied: six&gt;=1.5 in c:\users\user\appdata\roaming\python\python39\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
 </pre>
 </div>
@@ -13203,7 +13203,7 @@ You should consider upgrading via the &#39;C:\Users\user\AppData\Local\Programs\
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./train.csv&#39;</span><span class="p">)</span>
@@ -13735,18 +13735,37 @@ memory usage: 3.4+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataCopy</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="s2">&quot;Info&quot;</span><span class="p">,</span><span class="n">dataCopy</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
 
-<span class="n">mappedValues</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">mappedValuesOfsex</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;Male&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
     <span class="s2">&quot;Female&quot;</span><span class="p">:</span><span class="mi">1</span>
 <span class="p">}</span>
+<span class="n">mappedValuesOfrace</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;White&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;Black&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">mappedValuesOfrelationship</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Not-in-family&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;Husband&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;Wife&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;Own-child&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;Unmarried&quot;</span><span class="p">:</span><span class="mi">4</span>
+<span class="p">}</span>
 
-<span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;sex&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;sex&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mappedValues</span><span class="p">)</span>
+<span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;sex&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;sex&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mappedValuesOfsex</span><span class="p">)</span>
+<span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;race&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;race&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mappedValuesOfrace</span><span class="p">)</span>
+<span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;relationship&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;relationship&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mappedValuesOfrelationship</span><span class="p">)</span>
+<span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;workclass&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;workclass&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+<span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;education&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;education&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+<span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;marital-status&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;marital-status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+<span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;occupation&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;occupation&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+<span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;native-country&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">dataCopy</span><span class="p">[</span><span class="s2">&quot;native-country&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
 <span class="n">display</span><span class="p">(</span><span class="s2">&quot;mappedInfo&quot;</span><span class="p">,</span> <span class="n">dataCopy</span><span class="o">.</span><span class="n">info</span><span class="p">(),</span> <span class="n">dataCopy</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 
@@ -13825,25 +13844,25 @@ memory usage: 3.4+ MB
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 29825 entries, 0 to 29824
 Data columns (total 15 columns):
- #   Column          Non-Null Count  Dtype 
----  ------          --------------  ----- 
- 0   age             29825 non-null  int64 
- 1   workclass       28154 non-null  object
- 2   fnlwgt          29825 non-null  int64 
- 3   education       29825 non-null  object
- 4   education-num   29825 non-null  int64 
- 5   marital-status  29825 non-null  object
- 6   occupation      28149 non-null  object
- 7   relationship    29825 non-null  object
- 8   race            29825 non-null  object
- 9   sex             29825 non-null  int64 
- 10  capital-gain    29825 non-null  int64 
- 11  capital-loss    29825 non-null  int64 
- 12  hours-per-week  29825 non-null  int64 
- 13  native-country  29288 non-null  object
- 14  salary          29825 non-null  object
-dtypes: int64(7), object(8)
-memory usage: 3.4+ MB
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   age             29825 non-null  int64  
+ 1   workclass       29825 non-null  int8   
+ 2   fnlwgt          29825 non-null  int64  
+ 3   education       29825 non-null  int8   
+ 4   education-num   29825 non-null  int64  
+ 5   marital-status  29825 non-null  int8   
+ 6   occupation      29825 non-null  int8   
+ 7   relationship    28921 non-null  float64
+ 8   race            28340 non-null  float64
+ 9   sex             29825 non-null  int64  
+ 10  capital-gain    29825 non-null  int64  
+ 11  capital-loss    29825 non-null  int64  
+ 12  hours-per-week  29825 non-null  int64  
+ 13  native-country  29825 non-null  int8   
+ 14  salary          29825 non-null  object 
+dtypes: float64(2), int64(7), int8(5), object(1)
+memory usage: 2.4+ MB
 </pre>
 </div>
 </div>
@@ -13920,91 +13939,91 @@ memory usage: 3.4+ MB
     <tr>
       <th>0</th>
       <td>39</td>
-      <td>State-gov</td>
+      <td>6</td>
       <td>77516</td>
-      <td>Bachelors</td>
+      <td>9</td>
       <td>13</td>
-      <td>Never-married</td>
-      <td>Adm-clerical</td>
-      <td>Not-in-family</td>
-      <td>White</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0</td>
       <td>2174</td>
       <td>0</td>
       <td>40</td>
-      <td>United-States</td>
+      <td>38</td>
       <td>&lt;=50K</td>
     </tr>
     <tr>
       <th>1</th>
       <td>50</td>
-      <td>Self-emp-not-inc</td>
+      <td>5</td>
       <td>83311</td>
-      <td>Bachelors</td>
+      <td>9</td>
       <td>13</td>
-      <td>Married-civ-spouse</td>
-      <td>Exec-managerial</td>
-      <td>Husband</td>
-      <td>White</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>13</td>
-      <td>United-States</td>
+      <td>38</td>
       <td>&lt;=50K</td>
     </tr>
     <tr>
       <th>2</th>
       <td>38</td>
-      <td>Private</td>
+      <td>3</td>
       <td>215646</td>
-      <td>HS-grad</td>
+      <td>11</td>
       <td>9</td>
-      <td>Divorced</td>
-      <td>Handlers-cleaners</td>
-      <td>Not-in-family</td>
-      <td>White</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>40</td>
-      <td>United-States</td>
+      <td>38</td>
       <td>&lt;=50K</td>
     </tr>
     <tr>
       <th>3</th>
       <td>53</td>
-      <td>Private</td>
+      <td>3</td>
       <td>234721</td>
-      <td>11th</td>
+      <td>1</td>
       <td>7</td>
-      <td>Married-civ-spouse</td>
-      <td>Handlers-cleaners</td>
-      <td>Husband</td>
-      <td>Black</td>
+      <td>2</td>
+      <td>5</td>
+      <td>1.0</td>
+      <td>1.0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>40</td>
-      <td>United-States</td>
+      <td>38</td>
       <td>&lt;=50K</td>
     </tr>
     <tr>
       <th>4</th>
       <td>28</td>
-      <td>Private</td>
+      <td>3</td>
       <td>338409</td>
-      <td>Bachelors</td>
+      <td>9</td>
       <td>13</td>
-      <td>Married-civ-spouse</td>
-      <td>Prof-specialty</td>
-      <td>Wife</td>
-      <td>Black</td>
+      <td>2</td>
+      <td>9</td>
+      <td>2.0</td>
+      <td>1.0</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>40</td>
-      <td>Cuba</td>
+      <td>4</td>
       <td>&lt;=50K</td>
     </tr>
   </tbody>
@@ -14040,7 +14059,7 @@ memory usage: 3.4+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;Total NaN values of each column &quot;</span><span class="p">,</span><span class="n">data</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
@@ -14101,7 +14120,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">numerics</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">)</span>
@@ -14123,7 +14142,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -14163,7 +14182,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get the number of unique values in each column</span>
@@ -14190,7 +14209,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">male</span><span class="o">=</span><span class="p">(</span><span class="n">trainDF</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Male&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -14273,7 +14292,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Hmale</span> <span class="o">=</span> <span class="p">(</span><span class="n">trainDF</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Male&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">trainDF</span><span class="p">[</span><span class="s1">&#39;relationship&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Husband&#39;</span><span class="p">)</span>
@@ -14328,7 +14347,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">BPOTP</span> <span class="o">=</span> <span class="p">(</span><span class="n">trainDF</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Black&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">trainDF</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">trainDF</span><span class="p">[</span><span class="s1">&#39;workclass&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Private&#39;</span><span class="p">)</span>
@@ -14384,7 +14403,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -14397,7 +14416,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainDF</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">trainDF</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Bachelors&#39;</span><span class="p">))[</span><span class="s1">&#39;hours-per-week&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -14413,7 +14432,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[59]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -14430,7 +14449,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -14452,7 +14471,7 @@ dtype: int64</pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Verctorize took 0.026995182037353516 seconds
+<pre>Verctorize took 0.023504257202148438 seconds
 </pre>
 </div>
 </div>
@@ -14471,7 +14490,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mean_with_condition</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">condition</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
@@ -14496,7 +14515,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_with_condition</span><span class="p">(</span><span class="n">trainDF</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span> <span class="o">==</span><span class="s1">&#39;Bachelors&#39;</span><span class="p">,</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;hours-per-week&#39;</span><span class="p">]</span> <span class="p">)</span>
@@ -14512,7 +14531,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[62]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -14529,7 +14548,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -14551,7 +14570,7 @@ dtype: int64</pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Loop took 0.9659154415130615 seconds
+<pre>Loop took 0.9982388019561768 seconds
 </pre>
 </div>
 </div>
@@ -14596,7 +14615,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainDF</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;skyblue&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -14612,7 +14631,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[75]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -14655,7 +14674,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">trainDF</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">)</span>
@@ -14675,7 +14694,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[82]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -14718,7 +14737,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -14732,7 +14751,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainDF</span><span class="o">=</span><span class="n">trainDF</span><span class="p">[</span><span class="n">trainDF</span><span class="p">[</span><span class="s2">&quot;salary&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
@@ -14774,9 +14793,9 @@ dtype: int64</pre>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\user\AppData\Local\Temp\ipykernel_24532\4215529746.py:10: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+<pre>C:\Users\user\AppData\Local\Temp\ipykernel_10044\4215529746.py:10: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
   std1,mean1=greater_than_50k.std(),greater_than_50k.mean()
-C:\Users\user\AppData\Local\Temp\ipykernel_24532\4215529746.py:11: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+C:\Users\user\AppData\Local\Temp\ipykernel_10044\4215529746.py:11: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
   std2,mean2=less_than_or_equal_50k.std(),less_than_or_equal_50k.mean()
 </pre>
 </div>
@@ -14970,7 +14989,7 @@ dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;capital-gain&#39;</span><span class="p">]</span>
