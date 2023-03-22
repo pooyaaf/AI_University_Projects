@@ -1,5 +1,5 @@
 ,age,workclass,fnlwgt,education,education-num,marital-status,occupation,relationship,race,sex,capital-gain,capital-loss,hours-per-week,native-country,salary
-0,25,Private,230292,HS-grad,9,Married-civ-spouse,Craft-repair,Husband,White,Male,0,0,40,United-States,<=50K
+0,25,Private,230292,HS-grad,9,Married-civ-spouse,Craft-repair,Husband,White,Male,0,0,40,United-States,<=50k
 1,36,Private,90159,Bachelors,13,Married-civ-spouse,Prof-specialty,Wife,White,Female,0,0,32,United-States,<=50k
 2,40,Private,175398,Assoc-voc,11,Divorced,Prof-specialty,Not-in-family,White,Female,0,0,20,United-States,<=50k
 3,56,Self-emp-not-inc,53366,11th,7,Married-civ-spouse,Craft-repair,Husband,White,Male,0,0,20,United-States,<=50k
